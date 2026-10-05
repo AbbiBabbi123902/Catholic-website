@@ -1,1 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600&display=swap');
 
+
+/* ================= VARIABLES ================= */
+
+:root {
+
+    --ivory: #f7f4ec;
+    --paper: #eee9dd;
+    --white: #fffdf8;
+
+    --text: #302b24;
+    --muted: #777064;
+
+    --gold: #a88c5c;
+    --light-gold: #d0c09b;
+
+    --border: rgba(100, 80, 50, 0.22);
+
+}
+
+
+/* ================= BASIC RESET ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,255,255,.9),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(210,200,180,.25),
+            transparent 35%
+        ),
+
+        var(--ivory);
+
+    color: var(--text);
+
+    font-family:
+        "EB Garamond",
+        Georgia,
+        serif;
+
+    line-height: 1.7;
+
+}
+
+
+/* subtle paper texture */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .18;
+
+    background-image:
+
+        radial-gradient(
+            rgba(70,60,45,.2) .5px,
+            transparent .5px
+        );
+
+    background-size: 7px 7px;
+
+    z-index: -1;
+
+}
+
+
+a {
+    color: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding: 28px 0 18px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: .85rem;
+
+    letter-spacing: .22em;
+
+}
+
+
+.logo:first-letter {
+    color: var(--gold);
+}
+
+
+nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    margin-top: 20px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: var(--muted);
+
+    font-size: .92rem;
+
+    letter-spacing: .05em;
+
+    border-bottom:
+        1px solid transparent;
+
+    padding-bottom: 4px;
+
+    transition: .3s;
+
+}
+
+
+nav a:hover {
+
+    color: var(--text);
+
+    border-bottom-color:
+        var(--gold);
+
+}
+
+
+.menu-button {
+
+    display: none;
+
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding:
+        70px
+        0
+        100px;
+
+}
+
+
+.hero-image {
+
+    height: 610px;
+
+    padding: 16px;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 25px 70px
+        rgba(60,45,25,.12);
+
+}
+
+
+.image-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.65),
+            rgba(230,225,212,.7)
+        );
+
+    color: var(--muted);
+
+}
+
+
+.image-placeholder span {
+
+    font-size: 5rem;
+
+    color: var(--gold);
+
+}
+
+
+.image-placeholder p {
+
+    font-size: 1.3rem;
+
+    margin-bottom: 0;
+
+}
+
+
+.image-placeholder small {
+
+    opacity: .7;
+
+}
+
+
+/* ================= HERO TEXT ================= */
+
+.eyebrow {
+
+    color: var(--gold);
+
+    letter-spacing: .28em;
+
+    font-size: .8rem;
+
+    font-weight: 600;
+
+}
+
+
+.hero h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(4rem, 7vw, 7rem);
+
+    line-height: .83;
+
+    font-weight: 500;
+
+    margin: 20px 0;
+
+}
+
+
+.hero h1 em {
+
+    display: block;
+
+    font-weight: 400;
+
+}
+
+
+.latin {
+
+    color: var(--gold);
+
+    font-style: italic;
+
+    font-size: 1.2rem;
+
+}
+
+
+.description {
+
+    max-width: 480px;
+
+    color: var(--muted);
+
+    font-size: 1.12rem;
+
+}
+
+
+.gold-button {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding:
+        12px
+        25px;
+
+    border:
+        1px solid var(--gold);
+
+    text-decoration: none;
+
+    letter-spacing: .1em;
+
+    transition: .3s;
+
+}
+
+
+.gold-button:hover {
+
+    background: var(--text);
+
+    color: var(--white);
+
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote {
+
+    margin-left:
+        calc(50% - 50vw);
+
+    margin-right:
+        calc(50% - 50vw);
+
+    padding:
+        100px
+        20px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.quote-symbol {
+
+    color: var(--light-gold);
+
+    font-size: 3rem;
+
+}
+
+
+blockquote {
+
+    max-width: 800px;
+
+    margin: 15px auto;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(2.2rem, 5vw, 4rem);
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+}
+
+
+.quote p {
+
+    color: var(--muted);
+
+}
+
+
+/* ================= INTRO ================= */
+
+.introduction {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding:
+        110px
+        0;
+
+    text-align: center;
+
+}
+
+
+.introduction h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(2.7rem, 5vw, 4rem);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+}
+
+
+.introduction p {
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+    padding-bottom: 110px;
+
+}
+
+
+.feature {
+
+    padding: 38px;
+
+    text-decoration: none;
+
+    background:
+        rgba(255,253,248,.75);
+
+    border:
+        1px solid var(--border);
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+
+}
+
+
+.feature:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(60,45,25,.10);
+
+}
+
+
+.feature-icon {
+
+    color: var(--gold);
+
+    font-size: 2rem;
+
+}
+
+
+.feature h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+    margin: 10px 0;
+
+}
+
+
+.feature p {
+
+    color: var(--muted);
+
+}
+
+
+.feature span {
+
+    color: var(--gold);
+
+    letter-spacing: .08em;
+
+}
+
+
+/* ================= CLOSING ================= */
+
+.closing {
+
+    text-align: center;
+
+    padding:
+        100px 20px;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.closing > div {
+
+    color: var(--gold);
+
+    font-size: 2rem;
+
+}
+
+
+.closing h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 2.8rem;
+
+    font-weight: 500;
+
+    margin: 10px 0;
+
+}
+
+
+.closing p {
+
+    color: var(--muted);
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        60px 20px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--muted);
+
+}
+
+
+.footer-cross {
+
+    color: var(--gold);
+
+    font-size: 2rem;
+
+}
+
+
+footer p {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 1.3rem;
+
+}
+
+
+footer small {
+
+    opacity: .7;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    nav {
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+
+    nav.open {
+
+        display: flex;
+
+    }
+
+
+    .menu-button {
+
+        display: block;
+
+        margin: 15px auto 0;
+
+        padding: 8px 14px;
+
+        background: transparent;
+
+        border:
+            1px solid var(--border);
+
+        font-size: 1.2rem;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 40px;
+
+    }
+
+
+    .hero-image {
+
+        height: 470px;
+
+    }
+
+
+    .hero-text {
+
+        text-align: center;
+
+    }
+
+
+    .description {
+
+        margin:
+            20px auto;
+
+    }
+
+
+    .features {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
